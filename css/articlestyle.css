@@ -1,0 +1,148 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a3d, #2e2e6a);
+    color: white;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+header .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+header .buttons button {
+    margin-left: 10px;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: #4476f6;
+    color: white;
+    border-radius: 5px;
+}
+
+.register-btn {
+    background-color: #42b983;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Article Section */
+.article {
+    max-width: 1000px;
+    margin: 5% auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.article-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.article h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.article h1 span {
+    color: #42b983;
+}
+
+.article-date {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.article h2 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #b36aff;
+}
+
+.article p {
+    margin: 10px 0;
+    color: #dcdcdc;
+    font-size: 1.1rem;
+}
+
+.article ul {
+    margin: 15px 0 20px;
+    padding-left: 20px;
+    color: #dcdcdc;
+}
+
+.article ul li {
+    margin-bottom: 10px;
+}
+
+.article ul li strong {
+    color: #42b983;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 15px 5%;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+}
+
+footer nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header, footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .article {
+        padding: 10px;
+    }
+
+    .article h1 {
+        font-size: 2rem;
+    }
+}
