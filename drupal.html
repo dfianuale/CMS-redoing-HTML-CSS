@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Article Listing</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <h1>Article Listing</h1>
@@ -13,14 +13,21 @@
     fetch('api.dssproject373.me/jsonapi/node/article')
       .then(response => response.json())
       .then(data => {
-        const contentContainer = document.getElementById('content');
         data.data.forEach(article => {
-          const title = article.attributes.title;
-          const body = article.attributes.body.value;
-          contentContainer.innerHTML += `
-            <h2>${title}</h2>
-            <p>${body}</p>
-          `;
+  
+  const articleCard = document.createElement('div');
+  articleCard.classList.add('article-card');
+
+  articleCard.innerHTML = `
+    <div class="article-content">
+      <h3>${article.attributes.title}</h3>
+      <p>${article.attributes.body.value}</p>
+    </div>
+  `;
+
+  articlesContainer.appendChild(articleCard);
+});
+
         });
       })
       .catch(err => console.error('Error fetching content:', err));
