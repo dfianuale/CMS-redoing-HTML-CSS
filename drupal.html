@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Article Listing</title>
+</head>
+<body>
+  <h1>Article Listing</h1>
+  <div id="content"></div>
+
+  <script>
+    // Fetch content from Drupal's JSON:API endpoint
+    fetch('api.dssproject373.me/jsonapi/node/article')
+      .then(response => response.json())
+      .then(data => {
+        const contentContainer = document.getElementById('content');
+        data.data.forEach(article => {
+          const title = article.attributes.title;
+          const body = article.attributes.body.value;
+          contentContainer.innerHTML += `
+            <h2>${title}</h2>
+            <p>${body}</p>
+          `;
+        });
+      })
+      .catch(err => console.error('Error fetching content:', err));
+  </script>
+</body>
+</html>
